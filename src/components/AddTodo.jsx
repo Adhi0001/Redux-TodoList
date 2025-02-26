@@ -8,10 +8,12 @@ function AddTodo() {
     const dispatch = useDispatch()
 
     const addTodoHandler = (e) => {
-        e.preventDefault()
+      e.preventDefault()
+      if(input.length>0){
         dispatch(addTodo(input))
         setInput('')
     }
+  }
 
   return (
     <form onSubmit={addTodoHandler} className="space-x-3 mt-12">
